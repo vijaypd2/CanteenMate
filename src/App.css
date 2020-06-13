@@ -1,0 +1,32 @@
+.navbar-custom {
+  background-color: #fff;
+}
+
+.navbar-custom .navbar-brand {
+  color: #007bff;
+}
+.navbar-custom .navbar-collapse .navbar-nav .nav-item {
+  color: #007bff;
+  font-family: "Roboto", sans-serif;
+}
+.navbar-default .navbar-brand {
+  color: #007bff;
+}
+
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  background-color: transparent;
+  color: #007bff;
+}
+
+.custom-hr {
+  margin: 0;
+}
+
+input.largerCheckbox {
+  width: 20px;
+  height: 20px;
+}
+.jumbotron {
+  background-color: #fff;
+}

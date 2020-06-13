@@ -4,24 +4,27 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <Link to="/" className="navbar-brand">
-          Canteen App
-        </Link>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav mr-auto">
-            <li className="navbar-item mr-5">
-              <Link to="/users/add">Users Add</Link>
-            </li>
-            <li className="navbar-item mr-5">
-              <Link to="/sales/sell">Sales</Link>
-            </li>
-            <li className="navbar-item mr-5">
-              <Link to="/users/viewuser">View Users</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <React.Fragment>
+        <nav className="navbar-custom navbar navbar-dark bg-light navbar-expand-lg">
+          <Link to="/" className="navbar-brand">
+            Canteen App
+          </Link>
+          <div className="collapse navbar-collapse">
+            <ul className="navbar-nav  ml-auto">
+              <li className="navbar-item mr-5">
+                <Link to="/users/add">Users Add</Link>
+              </li>
+              <li className="navbar-item mr-5">
+                <Link to="/sales/sell">Sales</Link>
+              </li>
+              <li className="navbar-item mr-5">
+                <Link to="/users/viewuser">View Users</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <hr className="custom-hr" />
+      </React.Fragment>
     );
   }
 }

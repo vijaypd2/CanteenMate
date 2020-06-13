@@ -39,26 +39,30 @@ class UserAddComponent extends Component {
   render() {
     return (
       <div className="d-flex justify-content-center">
-        <form onSubmit={this.onSubmit}>
-          Username:{" "}
-          <input
-            type="text"
-            name="uname"
-            value={this.state.uname}
-            onChange={this.onTextChange}
-          />
-          CollegeID:
-          <input
-            type="text"
-            name="collegeId"
-            value={this.state.collegeId}
-            onChange={this.onTextChange}
-          />{" "}
-          <br />
-          <button type="submit" className="btn btn-primary mt-3 ">
-            Register
-          </button>
-        </form>
+        <p className="shadow-lg p-3 mt-5 mb-5 bg-white rounded">
+          <form onSubmit={this.onSubmit}>
+            Username:{" "}
+            <input
+              type="text"
+              name="uname"
+              value={this.state.uname}
+              onChange={this.onTextChange}
+            />
+            <br />
+            <br />
+            CollegeID:{" "}
+            <input
+              type="text"
+              name="collegeId"
+              value={this.state.collegeId}
+              onChange={this.onTextChange}
+            />{" "}
+            <br />
+            <button type="submit" className="btn btn-primary mt-3 ">
+              Register
+            </button>
+          </form>
+        </p>
       </div>
     );
   }

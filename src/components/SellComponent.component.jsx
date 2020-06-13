@@ -61,46 +61,53 @@ class SellComponent extends Component {
   render() {
     return (
       <div className="d-flex justify-content-center">
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="checkbox"
-            name="check1"
-            checked={this.state.check1}
-            onChange={this.onCheckChange}
-          />{" "}
-          Rice <br />
-          <input
-            type="checkbox"
-            name="check2"
-            checked={this.state.check2}
-            onChange={this.onCheckChange}
-          />{" "}
-          Fish <br />
-          <input
-            type="checkbox"
-            name="check3"
-            checked={this.state.check3}
-            onChange={this.onCheckChange}
-          />{" "}
-          Egg <br />
-          <input
-            type="checkbox"
-            name="check4"
-            checked={this.state.check4}
-            onChange={this.onCheckChange}
-          />{" "}
-          Biriyani <br />
-          <input
-            type="text"
-            name="collegeID"
-            value={this.state.collegeID}
-            onChange={this.onIdChange}
-          />
-          <br />
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
+        <p className="shadow-lg p-3 mt-5 mb-5 bg-white rounded">
+          <form onSubmit={this.onSubmit}>
+            <input
+              type="checkbox"
+              name="check1"
+              className="largerCheckbox"
+              checked={this.state.check1}
+              onChange={this.onCheckChange}
+            />{" "}
+            Rice <br />
+            <input
+              type="checkbox"
+              name="check2"
+              className="largerCheckbox"
+              checked={this.state.check2}
+              onChange={this.onCheckChange}
+            />{" "}
+            Fish <br />
+            <input
+              type="checkbox"
+              name="check3"
+              className="largerCheckbox"
+              checked={this.state.check3}
+              onChange={this.onCheckChange}
+            />{" "}
+            Egg <br />
+            <input
+              type="checkbox"
+              name="check4"
+              className="largerCheckbox"
+              checked={this.state.check4}
+              onChange={this.onCheckChange}
+            />{" "}
+            Biriyani <br />
+            CollegeID: <br />
+            <input
+              type="text"
+              name="collegeID"
+              value={this.state.collegeID}
+              onChange={this.onIdChange}
+            />
+            <br />
+            <button type="submit" className="btn m-3  btn-primary">
+              Submit
+            </button>
+          </form>
+        </p>
       </div>
     );
   }
