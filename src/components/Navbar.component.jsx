@@ -12,7 +12,7 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav  ml-auto">
               <li className="navbar-item mr-5">
-                <Link to="/users/add">Users Add</Link>
+                <Link to="/users/signup">SignUp</Link>
               </li>
               <li className="navbar-item mr-5">
                 <Link to="/sales/sell">Sales</Link>

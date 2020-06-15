@@ -5,8 +5,9 @@ class UserAddComponent extends Component {
   constructor() {
     super();
     this.state = {
-      uname: " ",
+      email: " ",
       collegeId: " ",
+      password: " ",
     };
 
     this.onTextChange = this.onTextChange.bind(this);
@@ -17,7 +18,7 @@ class UserAddComponent extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log("uname :", this.state.uname);
+    console.log("email :", this.state.email);
     console.log("collegeId:", this.state.collegeId);
   }
 
@@ -25,8 +26,9 @@ class UserAddComponent extends Component {
     e.preventDefault();
     axios
       .post("http://localhost:5000/users/add", {
-        username: this.state.uname,
+        email: this.state.email,
         collegeId: this.state.collegeId,
+        password: this.state.password,
       })
       .then((res) => {
         console.log(res);
@@ -44,8 +46,17 @@ class UserAddComponent extends Component {
             Username:{" "}
             <input
               type="text"
-              name="uname"
-              value={this.state.uname}
+              name="email"
+              value={this.state.email}
+              onChange={this.onTextChange}
+            />
+            <br />
+            <br />
+            Password:{" "}
+            <input
+              type="text"
+              name="password"
+              value={this.state.password}
               onChange={this.onTextChange}
             />
             <br />
@@ -59,7 +70,7 @@ class UserAddComponent extends Component {
             />{" "}
             <br />
             <button type="submit" className="btn btn-primary mt-3 ">
-              Register
+              Sign Up
             </button>
           </form>
         </p>

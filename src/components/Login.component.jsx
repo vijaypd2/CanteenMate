@@ -6,7 +6,8 @@ class UserLoginComponent extends Component {
     super();
     this.state = {
       collegeId: "",
-      username: "",
+      email: "",
+      password: "",
       mainBalance: "",
       retCollegeId: "",
     };
@@ -25,15 +26,16 @@ class UserLoginComponent extends Component {
     e.preventDefault();
     console.log(this.state.collegeId);
     axios
-      .post("http://localhost:5000/users/viewuser", {
-        collegeId: this.state.collegeId,
+      .post("http://localhost:5000/users/signin", {
+        email: this.state.email,
+        password: this.state.password,
       })
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
         this.setState({
-          username: res.data.username,
-          mainBalance: res.data.mainBalance,
-          retCollegeId: res.data.collegeId,
+          email: res.data.user.email,
+          mainBalance: res.data.user.mainBalance,
+          retCollegeId: res.data.user.collegeId,
         });
       })
       .catch((err) => {
@@ -47,10 +49,18 @@ class UserLoginComponent extends Component {
         <div className="d-flex justify-content-center">
           <p className="shadow-lg p-3 mt-5 mb-5 bg-white rounded">
             <form onSubmit={this.onSubmit}>
+              Email:{" "}
               <input
                 type="text"
-                name="collegeId"
-                value={this.state.collegeId}
+                name="email"
+                value={this.state.email}
+                onChange={this.onType}
+              />
+              Password:{" "}
+              <input
+                type="text"
+                name="password"
+                value={this.state.password}
                 onChange={this.onType}
               />
               <button type="submit" className="btn btn-primary ml-2">
@@ -62,7 +72,7 @@ class UserLoginComponent extends Component {
         <br /> <br />
         <div className="container .justify-content-center">
           <h3>User Information</h3> <hr />
-          <h5>Username: {this.state.username}</h5>
+          <h5>Username: {this.state.email}</h5>
           <h5>CollegeID: {this.state.retCollegeId}</h5>
           <h5>Main Balance: {this.state.mainBalance}</h5>
         </div>

@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Route path="/" exact component={HomeComponent} />
       <Route path="/sales/sell" component={SellComponent} />
-      <Route path="/users/add" component={UserAddComponent} />
+      <Route path="/users/signup" component={UserAddComponent} />
       <Route path="/users/viewuser" component={UserLoginComponent} />
     </Router>
   );
