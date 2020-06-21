@@ -18,7 +18,7 @@ class Navbar extends Component {
                 <Link to="/sales/sell">Sales</Link>
               </li>
               <li className="navbar-item mr-5">
-                <Link to="/users/viewuser">View Users</Link>
+                <Link to="/users/viewuser">SignIn</Link>
               </li>
             </ul>
           </div>

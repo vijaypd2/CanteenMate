@@ -151,12 +151,13 @@ router.route("/logout").get((req, res, next) => {
         console.log(err);
         return res.send({
           success: false,
-          message: "Error: Server error",
+          message: "Error: Server error Not Signed out",
         });
       }
       return res.send({
+        sessions,
         success: true,
-        message: "Good",
+        message: "Good Signed out",
       });
     }
   );
@@ -164,8 +165,7 @@ router.route("/logout").get((req, res, next) => {
 
 router.route("/verify").get((req, res, next) => {
   // Get the token
-  const { query } = req;
-  const { token } = query;
+  let token = req.query.token;
   // ?token=test
   // Verify the token is one of a kind and it's not deleted.
   UserSession.find(

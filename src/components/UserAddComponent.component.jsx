@@ -5,9 +5,9 @@ class UserAddComponent extends Component {
   constructor() {
     super();
     this.state = {
-      email: " ",
-      collegeId: " ",
-      password: " ",
+      email: "",
+      collegeId: "",
+      password: "",
     };
 
     this.onTextChange = this.onTextChange.bind(this);
@@ -25,7 +25,7 @@ class UserAddComponent extends Component {
   onSubmit(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/users/add", {
+      .post("http://localhost:5000/users/signup", {
         email: this.state.email,
         collegeId: this.state.collegeId,
         password: this.state.password,
@@ -41,7 +41,7 @@ class UserAddComponent extends Component {
   render() {
     return (
       <div className="d-flex justify-content-center">
-        <p className="shadow-lg p-3 mt-5 mb-5 bg-white rounded">
+        <div className="shadow-lg p-3 mt-5 mb-5 bg-white rounded">
           <form onSubmit={this.onSubmit}>
             Username:{" "}
             <input
@@ -73,7 +73,7 @@ class UserAddComponent extends Component {
               Sign Up
             </button>
           </form>
-        </p>
+        </div>
       </div>
     );
   }
