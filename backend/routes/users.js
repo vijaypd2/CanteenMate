@@ -188,10 +188,34 @@ router.route("/verify").get((req, res, next) => {
         });
       } else {
         // DO ACTION
-        return res.send({
-          success: true,
-          message: "Good",
-        });
+        const session = sessions[0];
+        const userId = session.userId;
+        //console.log(userId);
+        User.find(
+          {
+            _id: userId,
+          },
+          (err, users) => {
+            if (err) {
+              console.log("Error while finding the user");
+            } else {
+              const user = users[0];
+              //console.log("User Found:", user);
+              const email = user.email;
+              const mainBalance = user.mainBalance;
+              const retCollegeId = user.collegeId;
+              return res.send({
+                user: {
+                  email: email,
+                  mainBalance: mainBalance,
+                  retCollegeId: retCollegeId,
+                },
+                success: true,
+                message: "Good",
+              });
+            }
+          }
+        );
       }
     }
   );

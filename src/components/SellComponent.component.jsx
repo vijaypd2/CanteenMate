@@ -61,7 +61,7 @@ class SellComponent extends Component {
   render() {
     return (
       <div className="d-flex justify-content-center">
-        <p className="shadow-lg p-3 mt-5 mb-5 bg-white rounded">
+        <div className="shadow-lg p-3 mt-5 mb-5 bg-white rounded">
           <form onSubmit={this.onSubmit}>
             <input
               type="checkbox"
@@ -107,7 +107,7 @@ class SellComponent extends Component {
               Submit
             </button>
           </form>
-        </p>
+        </div>
       </div>
     );
   }

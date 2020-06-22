@@ -29,11 +29,16 @@ class UserLoginComponent extends Component {
         .get("http://localhost:5000/users/verify?token=" + token)
         .then((res) => {
           console.log("verify:", res);
-          //query the user database and show details
           if (res.data.success) {
+            //query the user database and show details
+            console.log("User using Token:", res.data.user);
+
             this.setState({
               token: token,
               isLoading: false,
+              email: res.data.user.email,
+              mainBalance: res.data.user.mainBalance,
+              retCollegeId: res.data.user.retCollegeId,
             });
           } else {
             this.setState({
@@ -120,7 +125,7 @@ class UserLoginComponent extends Component {
       return (
         <div>
           <div className="d-flex justify-content-center">
-            <p className="shadow-lg p-3 mt-5 mb-5 bg-white rounded">
+            <div className="shadow-lg p-3 mt-5 mb-5 bg-white rounded">
               <form onSubmit={this.onSubmit}>
                 Email:{" "}
                 <input
@@ -140,7 +145,7 @@ class UserLoginComponent extends Component {
                   Login
                 </button>
               </form>
-            </p>
+            </div>
           </div>
           <br /> <br />
         </div>
