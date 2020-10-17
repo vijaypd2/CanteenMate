@@ -134,6 +134,8 @@ class UserLoginComponent extends Component {
                   value={this.state.email}
                   onChange={this.onType}
                 />
+                <br />
+                <br />
                 Password:{" "}
                 <input
                   type="text"
@@ -141,6 +143,8 @@ class UserLoginComponent extends Component {
                   value={this.state.password}
                   onChange={this.onType}
                 />
+                <br />
+                <br />
                 <button type="submit" className="btn btn-primary ml-2">
                   Login
                 </button>
