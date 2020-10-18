@@ -1,3 +1,6 @@
+## CanteenMate 
+This project is currently a Prototype with initial framework setup.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
